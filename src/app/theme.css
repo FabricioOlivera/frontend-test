@@ -36,11 +36,13 @@ body {
   display: inline-block;
   margin: 0;
   font-size: 1rem;
-  background-color: transparent;
+  background-color: hsl(182, 49%, 35%, 15%);
   padding-inline: 0.8rem;
   padding-block: 0.5rem;
   border-radius: 8px;
+  /*
   border: 2px solid var(--color-accent);
+  */
   color: var(--color-accent);
   text-decoration: none;
   cursor: pointer;
