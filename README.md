@@ -1,8 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Este es un proyecto NextJS para prueba técnica de front-end
 
-## Getting Started
+## Cómo iniciar:
 
-First, run the development server:
+1. Primero abrir la terminal e instalar dependencias con algún gestor de paquetes de NodeJS
+   (npm, yarn, pnpm o bun):
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+2. Luego ejecutarlo con uno de los siguientes comandos:
 
 ```bash
 npm run dev
@@ -14,23 +27,21 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Por último abrir [http://localhost:3000](http://localhost:3000) con su navegador de preferencia para visualizar los resultados.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cómo usar el sitio
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Usted será bienvenido por un formulario para registrar un nuevo usuario con sus respectivos detalles de cuenta y monto inicial.
 
-## Learn More
+2. Tras presionar el botón registrar usted será redirigido a su perfil. (Debido a la no existencia de un login, tras escribir un número de cuenta bancaria ya existente usted accederá a dicha cuenta sin sobreescribir ningún dato).
 
-To learn more about Next.js, take a look at the following resources:
+3. Acá podrá realizar operaciones de transacción y podrá visualizar su balance, cuánto ha depositado y cuánto ha retirado.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tecnologías utilizadas y detalles técnicos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- NextJS, ReactJS, Typescript, CSS.
+- Las peticiones al back-end basadas en promesas son simuladas, usando como herramienta para mocking el local storage del navegador.
+- El manejo del estado de las peticiones y el renderizado de estas es completamente manual.
+- Existe un delay de 1 segundo por cada petición get para simular renderizado en conexiones lentas.
+- No existen dependencias externas, todos los componentes y estilos usados se encuentran dentro del proyecto.
+- Los estilos de la aplicación están separados de manera jerárquica, siendo los más cercanos a los components aquellos más específicos.
