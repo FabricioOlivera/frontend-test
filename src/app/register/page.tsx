@@ -4,9 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import "./page.css";
 import { register } from "@/api/mock/post-register";
-import showLocalStorage from "@/api/mock/debug/show-local-storage";
 import { AccountObject } from "@/api/DataObjects";
-import { useRouter } from "next/navigation";
 
 type RegisterForm = {
   [key: string]: number | string;
