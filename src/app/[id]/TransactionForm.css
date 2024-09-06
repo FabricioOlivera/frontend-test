@@ -1,0 +1,58 @@
+#transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-column: 1 / span 2;
+}
+
+#transaction-form fieldset label {
+  cursor: pointer;
+}
+
+#transaction-form > button {
+  margin-left: auto;
+}
+
+#transaction-form > fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+#transaction-form .card {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 0.5rem;
+  opacity: 0.65;
+  padding: 0.3rem;
+  transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#transaction-form .card:has(> input:checked) {
+  opacity: 1;
+  background-color: var(--color-inactive-field);
+}
+
+#transaction-form .card img {
+  object-fit: cover;
+  margin-left: auto;
+}
+
+#transaction-form .card input {
+  position: absolute;
+  opacity: 0;
+}
+
+#transaction-form button {
+  width: 100%;
+}
+
+@media (width > 400px) {
+  #transaction-form > fieldset {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #transaction-form button {
+    width: auto;
+  }
+}
