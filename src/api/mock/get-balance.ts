@@ -14,7 +14,7 @@ function createStorage() {
 }
 
 export async function getBalances(userID: number): Promise<BalanceResponse> {
-  await mockedDelay(500);
+  await mockedDelay(1000);
 
   let balances = localStorage.getItem("balances");
   if (balances === null) {

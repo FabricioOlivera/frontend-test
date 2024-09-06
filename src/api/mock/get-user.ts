@@ -8,7 +8,7 @@ type UserResponse = {
 };
 
 export async function getUser(userID: number): Promise<UserResponse> {
-  await mockedDelay(500);
+  await mockedDelay(1000);
 
   let accounts = localStorage.getItem("accounts");
   if (accounts === null) {
