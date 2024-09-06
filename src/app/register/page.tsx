@@ -47,6 +47,8 @@ export default function Register() {
           <fieldset className="user-fieldset">
             <InputField
               label="Nombre"
+              required
+              minLength={3}
               id="name-field"
               onChange={handleFormFieldChange}
               name="name"
@@ -55,6 +57,8 @@ export default function Register() {
 
             <InputField
               label="Apellido"
+              required
+              minLength={3}
               id="lastName-field"
               onChange={handleFormFieldChange}
               name="lastName"
@@ -64,6 +68,8 @@ export default function Register() {
 
           <InputField
             label="Número de cuenta"
+            required
+            minLength={8}
             id="account-field"
             onChange={handleFormFieldChange}
             name="accountNumber"

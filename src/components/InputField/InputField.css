@@ -7,6 +7,10 @@
   height: 1.5rem;
 }
 
+.input-field:has(input:user-invalid) {
+  background-color: hsl(335, 55%, 78%);
+}
+
 .input-field > input {
   inset: 0;
   left: 0.5rem;
