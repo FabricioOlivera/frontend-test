@@ -32,6 +32,8 @@ export async function getBalances(userID: number): Promise<BalanceResponse> {
   return {
     code: 200,
     msg: "Found balances history",
-    balanceHistory: foundBalanceObject.balanceHistory,
+    balanceHistory: foundBalanceObject.balanceHistory.map((value) =>
+      Number.parseInt(value)
+    ),
   };
 }

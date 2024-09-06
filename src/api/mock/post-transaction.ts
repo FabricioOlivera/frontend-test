@@ -31,7 +31,10 @@ export async function postTransaction(
 
   if (foundBalanceObject === undefined) {
     if (deltaOperation >= 0) {
-      balanceObjects.push({ userID: userID, balanceHistory: [deltaOperation] });
+      balanceObjects.push({
+        userID: userID,
+        balanceHistory: [deltaOperation + ""],
+      });
       localStorage.setItem("balances", JSON.stringify(balanceObjects));
       return { code: 201, msg: "New Balance History created" + deltaOperation };
     } else {
@@ -42,14 +45,14 @@ export async function postTransaction(
   const foundBalanceHistory = foundBalanceObject.balanceHistory;
   const lastBalance =
     foundBalanceHistory.length > 0
-      ? foundBalanceHistory[foundBalanceHistory.length - 1]
+      ? Number.parseInt(foundBalanceHistory[foundBalanceHistory.length - 1])
       : 0;
 
   if (lastBalance + deltaOperation < 0) {
     return { code: 406, msg: "Cannot extract more money than you have" };
   }
 
-  foundBalanceHistory.push(lastBalance + deltaOperation);
+  foundBalanceHistory.push(lastBalance + deltaOperation + "");
   localStorage.setItem("balances", JSON.stringify(balanceObjects));
   return { code: 201, msg: "New balance created successfully" };
 }

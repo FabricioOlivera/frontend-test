@@ -1,6 +1,6 @@
 export type BalanceObject = {
   userID: number;
-  balanceHistory: number[];
+  balanceHistory: string[];
 };
 
 export type AccountObject = {
