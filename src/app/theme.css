@@ -4,6 +4,7 @@
   --color-teal: hsl(182, 99%, 30%);
   --color-navy-blue: hsl(202, 100%, 21%);
 
+  --color-dark: hsl(202, 30%, 18%);
   --color-light: hsl(191, 74%, 96%);
   --color-accent: hsl(182, 49%, 50%);
 
@@ -12,7 +13,7 @@
 }
 
 body {
-  background-color: #cfe3e2;
+  background: #cfe3e2;
   color: var(--color-dark);
 }
 
@@ -31,24 +32,24 @@ body {
   background-color: var(--color-teal);
 }
 
-.pill {
-  display: flex;
-  border-radius: 100vw;
-  justify-content: center;
-}
-
 .btn {
   display: inline-block;
   margin: 0;
   font-size: 1rem;
   background-color: transparent;
   padding-inline: 0.8rem;
-  padding-block: 0.3rem;
-  border-radius: 6px;
+  padding-block: 0.5rem;
+  border-radius: 8px;
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
   text-decoration: none;
   cursor: pointer;
+}
+
+.pill {
+  display: flex;
+  border-radius: 100vw;
+  justify-content: center;
 }
 
 .primary {
@@ -87,4 +88,21 @@ body {
 
 .number-field {
   max-width: 11ch;
+}
+
+.sm-text {
+  font-size: 0.75rem;
+}
+
+.lg-text {
+  font-size: 1.25rem;
+}
+
+.xl-text {
+  font-size: 3rem;
+  letter-spacing: -1px;
+}
+
+.bold-font {
+  font-weight: bold;
 }
