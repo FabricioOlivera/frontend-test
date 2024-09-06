@@ -20,7 +20,7 @@ const defaultRegister: RegisterForm = {
 };
 
 export default function Register() {
-  const router = useRouter();
+  //const router = useRouter();
   const [form, setForm] = useState(defaultRegister);
 
   const handleFormFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +32,8 @@ export default function Register() {
       form as AccountObject,
       form.initialBalance as number
     );
-    router.push(res.id + "");
+    window.location.href = "/" + res.id;
+    //router.push("/" + res.id + "");
   };
 
   return (
