@@ -1,0 +1,90 @@
+/*COLORS*/
+:root {
+  --color-sand-dollar: hsl(43, 36%, 84%);
+  --color-teal: hsl(182, 99%, 30%);
+  --color-navy-blue: hsl(202, 100%, 21%);
+
+  --color-light: hsl(191, 74%, 96%);
+  --color-accent: hsl(182, 49%, 50%);
+
+  --color-inactive-field: hsl(182, 14%, 84%);
+  --color-active-field: hsl(182, 19%, 74%);
+}
+
+body {
+  background-color: #cfe3e2;
+  color: var(--color-dark);
+}
+
+.card {
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--color-light);
+}
+
+.card > h1 {
+  display: block;
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+  color: white;
+  background-color: var(--color-teal);
+}
+
+.pill {
+  display: flex;
+  border-radius: 100vw;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0;
+  font-size: 1rem;
+  background-color: transparent;
+  padding-inline: 0.8rem;
+  padding-block: 0.3rem;
+  border-radius: 6px;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary {
+  color: white;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    80%,
+    var(--color-teal)
+  );
+  box-shadow: 0px 10px 12px -7px var(--color-accent);
+}
+
+.input-field {
+  padding-inline: 0.3rem;
+  background-color: var(--color-inactive-field);
+  border: transparent;
+  border-radius: 8px;
+  outline: 1px transparent solid;
+  transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.input-field > label {
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.input-field > input {
+  color: inherit;
+}
+
+.input-field:focus-within {
+  background-color: var(--color-active-field);
+}
+
+.number-field {
+  max-width: 11ch;
+}
