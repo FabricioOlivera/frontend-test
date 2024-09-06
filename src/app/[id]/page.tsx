@@ -146,7 +146,9 @@ export default function Balance() {
         <TransactionForm
           onTransaction={async (value) => {
             const res = await postTransaction(Number.parseInt(userID), value);
-            alert(JSON.stringify(res));
+            if (res.code >= 400) {
+              alert(JSON.stringify(res));
+            }
             handleFetch();
           }}
           className="card"
