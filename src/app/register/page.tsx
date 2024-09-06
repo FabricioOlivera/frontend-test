@@ -3,6 +3,10 @@ import InputField from "@/components/InputField/InputField";
 import Link from "next/link";
 import { useState } from "react";
 import "./page.css";
+import { register } from "@/api/mock/post-register";
+import showLocalStorage from "@/api/mock/debug/show-local-storage";
+import { AccountObject } from "@/api/DataObjects";
+import { useRouter } from "next/navigation";
 
 type RegisterForm = {
   [key: string]: number | string;
@@ -16,17 +20,31 @@ const defaultRegister: RegisterForm = {
 };
 
 export default function Register() {
+  const router = useRouter();
   const [form, setForm] = useState(defaultRegister);
 
   const handleFormFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async () => {
+    const res = await register(
+      form as AccountObject,
+      form.initialBalance as number
+    );
+    router.push(res.id + "");
+  };
+
   return (
     <main>
       <div className="card">
         <h1>Registrarse</h1>
-        <form action="">
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            handleSubmit();
+          }}
+        >
           <fieldset className="user-fieldset">
             <InputField
               label="Nombre"

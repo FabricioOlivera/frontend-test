@@ -14,12 +14,14 @@ function createStorage() {
   return accounts;
 }
 
-export async function register(newAccount: {
-  name: string;
-  lastName: string;
-  accountNumber: string;
-  initialBalance: number;
-}): Promise<RegisterResponse> {
+export async function register(
+  newAccount: {
+    name: string;
+    lastName: string;
+    accountNumber: string;
+  },
+  initialBalance: number
+): Promise<RegisterResponse> {
   await mockedDelay(500);
 
   let accounts = localStorage.getItem("accounts");
@@ -41,7 +43,7 @@ export async function register(newAccount: {
   accountsObjects.push({ ...newAccount, id: newID });
 
   localStorage.setItem("accounts", JSON.stringify(accountsObjects));
-  const transaction = await postTransaction(newID, newAccount.initialBalance);
+  const transaction = await postTransaction(newID, initialBalance);
   console.log(transaction);
   return { code: 201, msg: "User created", id: newID };
 }
