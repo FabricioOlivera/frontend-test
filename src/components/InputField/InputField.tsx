@@ -4,11 +4,15 @@ type InputFieldProps = {
   label: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-export default function InputField({ label, ...props }: InputFieldProps) {
+export default function InputField({
+  label,
+  className,
+  ...props
+}: InputFieldProps) {
   return (
-    <div className="input-field">
+    <div className={`input-field ${className}`}>
       <input placeholder=" " {...props} />
-      <label htmlFor={props.name}>{label}</label>
+      <label htmlFor={props.id}>{label}</label>
     </div>
   );
 }
